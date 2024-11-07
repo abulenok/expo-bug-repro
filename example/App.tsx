@@ -1,11 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 import * as Nvm from 'nvm';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>{Nvm.hello()}</Text>
+      <Button
+        title='hello'
+        onPress={async () => {
+          const res = await Nvm.hello();
+          console.log(res);
+        }}
+      />
     </View>
   );
 }
